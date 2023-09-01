@@ -1,0 +1,149 @@
+
+
+*::-moz-selection {
+    color: black;
+    box-sizing: border-box
+}
+*::selection {
+    color: black;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box
+}
+
+
+.mainwrapper {
+    padding: 50px 20px;
+    margin: 0 auto;
+}
+.item01, .item02{
+    position: relative;
+    margin: auto;
+    padding: 0 20px;
+    border: 1px transparent solid;
+}
+.item01 {
+    margin-bottom: 50px;
+}
+#toggle, .hidden_paragraph, .hidden{
+    display: none;
+}
+.gardient {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 80px;
+    bottom: 0;
+    pointer-events: none;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255,255,255,0)) , to(#1A1A1A));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0)0 , #1A1A1A 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,0)0 , #1A1A1A 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,0)0 , #1A1A1A 100%);
+}
+.toggleShow, .seemore {
+    display: inline-block;
+    color: #444;
+    cursor: pointer;
+    z-index: 1;
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    border: 1px solid ;
+    border-top-color: #eaeaea;
+    border-left-color: #eaeaea;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    background: #fdfdfd;
+    padding: 5px;
+}
+.seemore:before{
+    content: 'See More';
+}
+
+#toggle:checked  ~.hidden_paragraph{
+      display: inline;
+}
+#toggle:checked  ~.gardient{
+      display: none;
+} 
+#toggle:checked ~.seemore:before{
+    content: 'See Less'
+}
+#toggle:checked ~.seemore{
+    background: #f7f7f7;
+    border-right-color: #eaeaea;
+    border-bottom-color: #eaeaea;
+    border-top-color: #f7f7f7;
+    border-left-color: #f7f7f7;
+}
+.shapped{
+    background: #f7f7f7;
+    border-right-color: #eaeaea;
+    border-bottom-color: #eaeaea;
+    border-top-color: #f7f7f7;
+    border-left-color: #f7f7f7;
+}
+
+.hovered{
+    background-color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+  }
+  
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
